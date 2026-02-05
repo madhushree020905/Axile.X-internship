@@ -1,0 +1,5 @@
+Expected:
+The program should print personal details entered by the user.
+
+Actual:
+The program printed the personal details correctly.
