@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Mini Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 class="title">JavaScript Mini Project</h1>
+
+    <!-- Alert -->
+    <div class="card">
+        <h3>Alert Example</h3>
+        <button onclick="showAlert()">Click Me</button>
+    </div>
+
+    <!-- Form -->
+    <div class="card">
+        <h3>Form Validation</h3>
+        <input type="text" id="name" placeholder="Enter Name">
+        <input type="email" id="email" placeholder="Enter Email">
+        <button onclick="validateForm()">Submit</button>
+    </div>
+
+    <!-- Calculator -->
+    <div class="card">
+        <h3>Simple Calculator</h3>
+        <input type="number" id="num1" placeholder="Number 1">
+        <input type="number" id="num2" placeholder="Number 2">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <button onclick="calculate()">Calculate</button>
+        <p id="result"></p>
+    </div>
+
+    <!-- Change Text -->
+    <div class="card">
+        <h3>Change Text</h3>
+        <p id="text">Hello Pip 👋</p>
+        <button onclick="changeText()">Change Text</button>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
