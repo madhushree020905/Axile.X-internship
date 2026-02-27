@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+</head>
+<body>
+
+    <h2>Add Student</h2>
+
+    <form action="/submit" method="POST">
+        Name: <input type="text" name="name" required><br><br>
+        Age: <input type="number" name="age" required><br><br>
+        Course: <input type="text" name="course" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <hr>
+
+    <h2>Stored Students</h2>
+
+    {% if students %}
+        <ul>
+        {% for student in students %}
+            <li>
+                {{ student["name"] }} - {{ student["age"] }} - {{ student["course"] }}
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+</body>
+</html>
