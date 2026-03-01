@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+   <style>
+    body {
+        font-family: Arial;
+        margin: 0;
+    }
+
+    .container {
+        width: 85%;
+        margin: 40px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+
+    .btn {
+        padding: 8px 14px;
+        text-decoration: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 14px;
+    }
+
+    .add { background: #6a11cb; }
+    .edit { background: #2575fc; }
+    .delete { background: #ff416c; }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        background: #6a11cb;
+        color: white;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: center;
+    }
+
+    tr:nth-child(even) {
+        background: #f3f3f3;
+    }
+
+    tr:hover {
+        background: #e0e0ff;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Records</h2>
+
+    <div class="top-bar">
+        <a href="/add" class="btn add">+ Add Student</a>
+    </div>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for student in students %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ student["name"] }}</td>
+            <td>{{ student["age"] }}</td>
+            <td>{{ student["course"] }}</td>
+            <td>
+                <a href="/edit/{{ student['id'] }}" class="btn edit">Edit</a>
+                <a href="/delete/{{ student['id'] }}" class="btn delete">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>
