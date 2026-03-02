@@ -8,7 +8,6 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
 
-# Create users table
 conn = get_db_connection()
 conn.execute("""
 CREATE TABLE IF NOT EXISTS users (
@@ -18,18 +17,15 @@ CREATE TABLE IF NOT EXISTS users (
 )
 """)
 
-# Insert a default user (only once)
 conn.execute("INSERT OR IGNORE INTO users (username, password) VALUES (?, ?)",
              ("admin", "1234"))
 conn.commit()
 conn.close()
 
-# Login page
 @app.route("/")
 def login():
     return render_template("login.html")
 
-# Handle login
 @app.route("/login", methods=["POST"])
 def handle_login():
     username = request.form["username"]
@@ -47,7 +43,6 @@ def handle_login():
     else:
         return render_template("login.html", error="Invalid Username or Password")
 
-# Dashboard page
 @app.route("/dashboard")
 def dashboard():
     return render_template("dashboard.html")
