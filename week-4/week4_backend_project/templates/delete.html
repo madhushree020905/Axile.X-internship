@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Student</title>
+    <style>
+        body {
+            font-family:Arial; background:#eef2f7;
+            display:flex; justify-content:center; align-items:center;
+            height:100vh;
+        }
+        .card {
+            background:white; padding:35px; width:320px;
+            border-radius:12px;
+            box-shadow:0 6px 25px rgba(0,0,0,0.08);
+            text-align:center;
+        }
+        button {
+            padding:8px 15px;
+            border:none; border-radius:6px;
+            margin:10px;
+        }
+        .confirm { background:#dc3545; color:white; }
+        .cancel {
+            background:gray; color:white;
+            padding:8px 15px; border-radius:6px;
+            text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h3>Are you sure?</h3>
+    <p>Delete {{ student['name'] }}?</p>
+
+    <form method="POST">
+        <button type="submit" class="confirm">Yes, Delete</button>
+        <a href="/" class="cancel">Cancel</a>
+    </form>
+</div>
+
+</body>
+</html>

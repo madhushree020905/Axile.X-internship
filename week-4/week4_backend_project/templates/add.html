@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+    <style>
+        body {
+            font-family:Arial; background:#eef2f7;
+            display:flex; justify-content:center; align-items:center;
+            height:100vh;
+        }
+        .card {
+            background:white; padding:35px; width:320px;
+            border-radius:12px;
+            box-shadow:0 6px 25px rgba(0,0,0,0.08);
+        }
+        h2 { text-align:center; }
+        input {
+            width:100%; padding:10px; margin:10px 0;
+            border-radius:6px; border:1px solid #ccc;
+        }
+        button {
+            width:100%; padding:10px;
+            background: #6a11cb; color:white;
+            border:none; border-radius:6px;
+        }
+        a { display:block; text-align:center; margin-top:15px; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Add Student</h2>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="number" name="age" placeholder="Age" required>
+        <input type="text" name="course" placeholder="Course" required>
+        <button type="submit">Add</button>
+    </form>
+    <a href="/">Back</a>
+</div>
+
+</body>
+</html>
